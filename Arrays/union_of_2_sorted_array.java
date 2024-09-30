@@ -46,3 +46,6 @@ static ArrayList<Integer> FindUnion(int arr1[], int arr2[], int n, int m) {
 }
 
 
+// time comlexity O(n)
+// Space complexity O(1)
+
