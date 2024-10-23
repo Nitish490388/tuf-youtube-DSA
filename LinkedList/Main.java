@@ -10,7 +10,11 @@ public class Main {
         list.insert(1);
         list.insert(2);
         list.insert(3);
-        list.delete(3);
+        list.insert(4);
+       
+        list.display();
+
+        list.reverse();
         list.display();
 
         // linkedList l = new linkedList();

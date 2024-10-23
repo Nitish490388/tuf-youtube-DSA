@@ -73,4 +73,25 @@ public class DoublyLinkedList {
             System.out.println("Itme not exists");
          }
     }
+
+    void reverse() {
+        if(head == null) {
+            return ;
+        }
+        Node2 back = null;
+        
+        // Initialize a pointer to
+        // the current node
+        Node2 current = head;
+        
+        // Traverse the linked list
+        while (current != null) {
+            back = current.prev;
+            current.prev = current.next;
+            current.next = back;
+            current = current.prev;
+        }
+        
+        head = back.prev;
+    }
 }
