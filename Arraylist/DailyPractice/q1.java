@@ -1,5 +1,7 @@
 package Arraylist.DailyPractice;
 
+import java.util.HashMap;
+
 // Problem:
 // Given an array of integers nums and an integer target, return the indices of the two numbers such that they add up to target.
 
@@ -15,25 +17,45 @@ package Arraylist.DailyPractice;
 
 // Time complexity better than O(n²) is expected.
 
-
 public class q1 {
     static int[] solution(int[] arr, int target) {
 
         int[] ans = new int[2];
-        for(int i = 0; i< arr.length; i++) {
-            for(int j = i+1; j<arr.length; j++) {
-                if(arr[i] + arr[j] == target) {
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = i + 1; j < arr.length; j++) {
+                if (arr[i] + arr[j] == target) {
                     ans[0] = i;
                     ans[1] = j;
+                    break;
                 }
             }
         }
         return ans;
-    } 
-    
+    }
+
+    static int[] Opt_solution(int[] arr, int target) {
+
+        int[] ans = new int[2];
+
+        HashMap<Integer, Integer> map = new HashMap<>();
+        for (int i = 0; i < arr.length; i++) {
+            int num = arr[i];
+
+            if (map.containsKey(target - num)) {
+                ans[0] = map.get(target - num);
+                ans[1] = i;
+
+                break;
+            } else {
+                map.put(num, i);
+            }
+        }
+        return ans;
+    }
+
     public static void main(String[] args) {
-        int arr[] = new int[] {1,4,5,7,3};
-        for(int n: solution(arr,6)) {
+        int arr[] = new int[] { 1, 4, 5, 7, 3 };
+        for (int n : solution(arr, 6)) {
             System.out.print(n + " ");
         }
     }

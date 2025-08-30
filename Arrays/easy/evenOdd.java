@@ -6,7 +6,12 @@ public class evenOdd {
     public static void main(String[] args) {
       
         int arr[] = new int[] {2, 1, 2, 1, 5, 5, 2};
-        System.out.println(countEvenOdd(arr, arr.length).toString());
+        
+
+		for(int n: countEvenOdd(arr, arr.length)) {
+			System.out.print(n+ " ");
+		}
+
     }
 
     public static int[] countEvenOdd(int[] arr, int n) {
