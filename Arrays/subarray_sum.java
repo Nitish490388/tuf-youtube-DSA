@@ -31,7 +31,26 @@ public class subarray_sum {
     public static void main(String[] args) {
 
         int arr[] = {1,2,3,4,4,0,0,3};
-        int k = 8;
-        System.out.println(getLongestSubarray(arr, k));
+        int k = arr.length;
+        // System.out.println(getLongestSubarray(arr, k));
+
+        int dp[] = new int[k];
+        for(int i = 0; i< k; i++) {
+            dp[i] = Integer.MIN_VALUE;
+        }
+
+        System.out.println(solve(arr, k-1, dp));
+    }
+
+    static int solve(int[] nums, int n, int[] dp) {
+        if(n == 1) return nums[0];
+
+         if (dp[n] != Integer.MIN_VALUE) return dp[n];
+
+        int extend = solve(nums, n-1, dp) + nums[n];
+        int startNew = nums[n];
+
+         dp[n] = Math.max(extend, startNew);
+        return dp[n];
     }
 }
