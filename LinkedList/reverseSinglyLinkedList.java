@@ -19,6 +19,20 @@ public class reverseSinglyLinkedList {
         }
         return head;
     }
+
+
+    static ListNode reverse(ListNode head) {
+        ListNode temp = head;
+        ListNode prev = null;
+
+        while(temp!=null) {
+            ListNode front = temp.next;
+            temp.next = prev;
+            prev = temp;
+            temp = front;
+        }
+        return head;
+    }
     
     public static void main(String[] args) {
         linkedList list = new linkedList();
