@@ -21,8 +21,6 @@
 package Practice;
 
 import java.util.HashMap;
-import HashMap.hashmap;
-
 public class q1 {
     public static void main(String[] args) {
         String s = "abcabcbb";
