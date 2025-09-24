@@ -8,10 +8,6 @@ public class kaden {
         int[] nums2 = { 1, 2, 3 };
         int[] nums3 = { -5, -2, -3 };
 
-        // System.out.println(solution2(nums1)); // 6 -> [4,-1,2,1]
-        // System.out.println(solution2(nums2)); // 6 -> [1,2,3]
-        // System.out.println(solution2(nums3)); // -2 -> single element
-
         for(int n: solution2(nums2)) {
             System.out.print(n+" ");
         }
