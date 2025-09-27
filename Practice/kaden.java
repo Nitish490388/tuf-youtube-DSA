@@ -15,8 +15,6 @@ public class kaden {
 
     static int solution(int arr[]) {
 
-       
-
         int currSum = arr[0];
         int maxSum = arr[0];
 
