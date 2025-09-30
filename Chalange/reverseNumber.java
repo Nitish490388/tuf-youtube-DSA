@@ -2,7 +2,7 @@ package Chalange;
 
 public class reverseNumber {
     public static void main(String[] args) {
-        System.out.println(solution(0));
+        System.out.println(solution(2111));
     }
 
     static int solution(int num) {
